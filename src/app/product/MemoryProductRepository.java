@@ -7,8 +7,8 @@ public class MemoryProductRepository implements ProductRepository {
             new Product(1, "새우버거", 3300, 444),
             new Product(2, "치킨버거", 3500, 543),
             new Product(3, "감자튀김", 1000, 300),
-            new Product(5, "코카콜라", 1000, 200),
-            new Product(7, "제로콜라", 1000, 0)
+            new Product(4, "코카콜라", 1000, 200),
+            new Product(5, "제로콜라", 1000, 0)
     };
 
     @Override
