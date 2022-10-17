@@ -6,15 +6,13 @@ public class Member {
     private int id;
     private String userName;
     private String password;
-    private String address;
     private int orderId;
     private Product[] basket = new Product[0];
 
-    public Member(int id, String userId, String password, String address) {
+    public Member(int id, String userId, String password) {
         this.id = id;
         this.userName = userId;
         this.password = password;
-        this.address = address;
     }
 
     public int getId() {
@@ -27,10 +25,6 @@ public class Member {
 
     public String getPassword() {
         return password;
-    }
-
-    public String getAddress() {
-        return address;
     }
 
     public void setOrderId(int orderId) {

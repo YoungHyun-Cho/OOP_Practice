@@ -7,9 +7,9 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public void signUp(String userName, String password, String address) {
+    public void signUp(String userName, String password) {
         int lastIndex = memberRepository.findAll().length;
-        memberRepository.addMember(new Member(lastIndex, userName, password, address));
+        memberRepository.addMember(new Member(lastIndex, userName, password));
     }
 
     public Member signIn(String userName, String password) {

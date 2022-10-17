@@ -65,10 +65,7 @@ public class DeliveryApp {
                 System.out.print("PW : ");
                 String password = scanner.nextLine();
 
-                System.out.print("주소 : ");
-                String address = scanner.nextLine();
-
-                memberService.signUp(userName, password, address);
+                memberService.signUp(userName, password);
 
                 System.out.println("[📣] 가입을 환영합니다. ");
             }
@@ -86,7 +83,7 @@ public class DeliveryApp {
             System.out.println("-----------------------------------------");
 
             for (Product product : products) {
-                System.out.printf("  (%2s) %8s   %4d kcal   %5d 원\n",
+                System.out.printf("  (%2s) %s   %4d kcal   %5d 원\n",
                         product.getId() < 9 ? "_" + (product.getId() + 1) : product.getId() + 1,
                         product.getName() ,product.getKcal(), product.getPrice());
             }
@@ -125,7 +122,6 @@ public class DeliveryApp {
 
                             System.out.println("-----------------------------------------");
                             System.out.printf("  결제하실 금액 : %7d\n\n", order.getFinalPrice());
-                            System.out.printf("[📣] 상품을 준비하여 %s(으)로 배송합니다.\n", member.getAddress());
                             break SelectMenu;
 
                         }
