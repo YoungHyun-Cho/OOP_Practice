@@ -24,7 +24,6 @@ public class DeliveryApp {
 
     public void start() {
 
-
         // 수강생들이 아직 컬렉션을 배우지 않았으므로 배열을 사용하였습니다.
         Product[] products = productService.getAllProduct();
 

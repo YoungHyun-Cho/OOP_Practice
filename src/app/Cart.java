@@ -12,10 +12,6 @@ public class Cart {
     private Product[] items = new Product[0];
     private boolean ordered = false;
 
-    public Product[] getItems() {
-        return items;
-    }
-
     public boolean isOrdered() {
         return ordered;
     }
@@ -31,7 +27,6 @@ public class Cart {
         else if (product instanceof Side) product = new Side((Side) product);
         else if (product instanceof Drink) product = new Drink((Drink) product);
         else product = new BurgerSet((BurgerSet) product);
-
 
         /*
          * 배열의 길이 확장과 복사
