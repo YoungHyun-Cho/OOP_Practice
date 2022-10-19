@@ -1,6 +1,7 @@
 package app;
 
 import app.product.Product;
+import app.product.ProductService;
 import app.product.subproduct.BurgerSet;
 import app.product.subproduct.Drink;
 import app.product.subproduct.Hamburger;
@@ -23,10 +24,13 @@ public class Cart {
         * 복사 생성자를 통한 깊은 복사로 장바구니에 넣을 product를 새롭게 생성합니다.
         * 깊은 복사를 사용하는 이유는 subproduct 패키지 내의 클래스들의 복사 생성자 상단에 설명해두었습니다.
         * */
-        if (product instanceof Hamburger) product = new Hamburger((Hamburger) product);
-        else if (product instanceof Side) product = new Side((Side) product);
-        else if (product instanceof Drink) product = new Drink((Drink) product);
-        else product = new BurgerSet((BurgerSet) product);
+
+        Product newProduct;
+
+        if (product instanceof Hamburger) newProduct = new Hamburger((Hamburger) product);
+        else if (product instanceof Side) newProduct = new Side((Side) product);
+        else if (product instanceof Drink) newProduct = new Drink((Drink) product);
+        else newProduct = new BurgerSet((BurgerSet) product);
 
         /*
          * 배열의 길이 확장과 복사
@@ -36,9 +40,10 @@ public class Cart {
          * System.arraycopy를 활용한 배열의 길이 확장과 복사는 [Java 기초] 유닛의 연습문제에서
          * 많이 다루기 때문에 수강생들에게 크게 어렵지 않게 느껴질 것으로 생각됩니다.
          * */
+
         Product[] newItems = new Product[items.length + 1];
         System.arraycopy(items, 0, newItems, 0, items.length);
-        newItems[newItems.length - 1] = product;
+        newItems[newItems.length - 1] = newProduct;
         items = newItems;
     }
 

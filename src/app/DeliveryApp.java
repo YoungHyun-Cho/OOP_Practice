@@ -62,7 +62,7 @@ public class DeliveryApp {
         * */
 
         System.out.println("[🔻] 메뉴");
-        System.out.println("-".repeat(50));
+        System.out.println("-".repeat(60));
 
         printHamburgers(products, false);
         printSides(products, false);
@@ -70,7 +70,7 @@ public class DeliveryApp {
 
         System.out.println();
         System.out.println("🧺 (0) 장바구니");
-        System.out.println("-".repeat(50));
+        System.out.println("-".repeat(60));
         System.out.print("[📣] 메뉴를 선택해주세요 : ");
     }
 
